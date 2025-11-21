@@ -134,10 +134,15 @@ Language: {{.Language}}
 {{if eq .Language "Thai"}}
 **Thai Style:**
 - Natural, warm conversation appropriate for {{.Formality}}
+- **CRITICAL: Express warmth using polite particles (ครับ/ค่ะ) ONLY. Do not use punctuation to show emotion.**
 - Politeness: formal=ครับ/ค่ะ always, friendly=ครับ/ค่ะ regularly, casual=นะ/ครับ/ค่ะ naturally
-- NO English punctuation: ! ? : ; " ' ( ) [ ] ...
+- **STRICTLY FORBIDDEN:** ! ? : ; " ' ( ) [ ] ...
 - NO emojis
 - Numbers as digits: 30000
+
+**Formatting Examples:**
+- Incorrect: สวัสดีครับ! มีอะไรให้ช่วยไหมครับ?
+- Correct: สวัสดีครับ มีอะไรให้ผมช่วยตรวจสอบไหมครับ
 
 {{else if eq .Language "English"}}
 **English Style:**
