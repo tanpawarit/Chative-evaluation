@@ -1,0 +1,40 @@
+Agent Failure Modes
+Purpose: Quick, high-signal review for agent orchestration, tools, prompts, and retrieval.
+
+1) Intent, Entities, Context
+- [ ] Intent captured and constraints acknowledged (budget, qty, dates).
+- [ ] Required entities extracted/validated; asks a clarifying question if low confidence.
+- [ ] Multi-turn context preserved; no drift or loss of prior constraints.
+
+2) Tooling (selection, params, effects)
+- [ ] Correct tool(s) chosen in sensible order; preconditions checked.
+- [ ] Params validated (presence, type, units); safe defaults only.
+- [ ] Side-effects gated (confirmation/idempotency); errors handled with useful messages and controlled retries.
+
+3) Retrieval & Knowledge
+- [ ] Query includes key entities/filters; relevance threshold and dedup applied.
+- [ ] Answers grounded in retrieved sources; avoids ungrounded claims/hallucinations.
+- [ ] No-result fallback: clarify with user, alternate query, or admit unknown.
+
+4) Reasoning & Output Quality
+- [ ] Correct prompt template contract used consistently (v1 vs v2); instructions not truncated.
+- [ ] Math/date/time validated (TZ, format, availability, conversions).
+- [ ] States uncertainty/assumptions and proposes next steps when needed.
+
+5) Model & Operational Limits
+- [ ] Context length within limits; truncation preserves system/tool sections.
+- [ ] Timeouts, 429/5xx handled with jittered backoff; loops/cost bounded.
+- [ ] Deterministic retries/dedup keys to prevent duplicate effects.
+
+6) Security & Privacy
+- [ ] Resists prompt injection; ignores requests to reveal secrets or run unsafe actions.
+- [ ] Sanitize inputs to tools; validate outputs before acting.
+- [ ] Secrets from correct env; PII/secrets not logged.
+
+RCA One-liners
+- Root cause:
+- Evidence/logs:
+- Fix applied:
+- Guardrail/tests added:
+- Owner/ETA:
+

@@ -1,0 +1,322 @@
+================================================================================
+TUPLES สำหรับร้านขายคอมพิวเตอร์และอุปกรณ์
+================================================================================
+
+คำอธิบาย:
+Tuple คือ การรวมกันของค่าต่างๆ จากแต่ละมิติ (Feature, Persona, Scenario) 
+เพื่อกำหนดกรณีการใช้งานเฉพาะ ซึ่งจะใช้เป็นข้อมูลสำหรับสร้าง Query จริง
+
+================================================================================
+GROUP 1: FEATURE - "PRODUCT SEARCH"
+================================================================================
+
+--- Tuple 1 ---
+Feature: Product Search
+Persona: Gamer
+Scenario: Specific Query
+
+Query: "หาการ์ดจอ RTX 4070 ราคาไม่เกิน 25,000 บาท พร้อมส่ง"
+
+Intent:
+  - search_product (confidence: 0.9)
+
+Entities:
+  - product_type: "graphics card"
+  - product_model: "RTX 4070"
+  - price_max: 25000
+  - availability: "in stock"
+
+================================================================================
+
+--- Tuple 2 ---
+Feature: Product Search
+Persona: Office Worker
+Scenario: Vague Query
+
+Query: "อยากได้โน้ตบุ๊คทำงานดีๆ งบประมาณไม่เยอะ"
+
+Intent:
+  - search_product (confidence: 0.7)
+
+Entities:
+  - product_type: "notebook"
+  - use_case: "office work"
+  - budget_level: "moderate"
+
+================================================================================
+
+--- Tuple 3 ---
+Feature: Product Search
+Persona: Student
+Scenario: Budget Conscious
+
+Query: "มีคอมสำหรับเรียนออนไลน์ราคาถูกไหมครับ ไม่เกิน 15,000"
+
+Intent:
+  - search_product (confidence: 0.85)
+
+Entities:
+  - product_type: "computer"
+  - use_case: "online learning"
+  - price_max: 15000
+  - budget_priority: "low price"
+
+================================================================================
+GROUP 2: FEATURE - "PRODUCT INQUIRY"
+================================================================================
+
+--- Tuple 4 ---
+Feature: Product Inquiry
+Persona: Tech Enthusiast
+Scenario: Technical Specs
+
+Query: "CPU Ryzen 9 7950X รองรับ RAM DDR5 ความเร็วสูงสุดเท่าไหร่"
+
+Intent:
+  - product_inquiry (confidence: 0.95)
+
+Entities:
+  - product_type: "cpu"
+  - product_model: "Ryzen 9 7950X"
+  - inquiry_type: "compatibility"
+  - spec_detail: "RAM speed"
+
+================================================================================
+
+--- Tuple 5 ---
+Feature: Product Inquiry
+Persona: First Time Builder
+Scenario: Compatibility Check
+
+Query: "เมนบอร์ดรุ่นนี้ใช้กับการ์ดจอที่ผมเลือกได้ไหม"
+
+Intent:
+  - product_inquiry (confidence: 0.8)
+
+Entities:
+  - product_type: "motherboard"
+  - inquiry_type: "compatibility"
+  - related_product: "graphics card"
+
+================================================================================
+
+--- Tuple 6 ---
+Feature: Product Inquiry
+Persona: Casual User
+Scenario: Ambiguous Question
+
+Query: "ของดีไหมเนี่ย ใช้ได้นานไหม"
+
+Intent:
+  - product_inquiry (confidence: 0.6)
+
+Entities:
+  - inquiry_type: "quality"
+  - inquiry_type: "durability"
+
+================================================================================
+GROUP 3: FEATURE - "ORDER MANAGEMENT"
+================================================================================
+
+--- Tuple 7 ---
+Feature: Order Management
+Persona: Regular Customer
+Scenario: Order Status
+
+Query: "เช็คสถานะออเดอร์ #ORD12345 ของผมหน่อยครับ"
+
+Intent:
+  - check_order (confidence: 0.95)
+
+Entities:
+  - order_id: "ORD12345"
+  - action_type: "check status"
+
+================================================================================
+
+--- Tuple 8 ---
+Feature: Order Management
+Persona: Anxious Buyer
+Scenario: Delivery Concern
+
+Query: "สั่งไปตั้งแต่เมื่อวานแล้วยังไม่ได้รับของเลย จะติดตามยังไง"
+
+Intent:
+  - check_order (confidence: 0.85)
+
+Entities:
+  - time_reference: "yesterday"
+  - concern_type: "delivery delay"
+
+================================================================================
+
+--- Tuple 9 ---
+Feature: Order Management
+Persona: Corporate Buyer
+Scenario: Bulk Order
+
+Query: "ต้องการยกเลิกออเดอร์ PO-2024-089 สั่งไป 20 เครื่อง"
+
+Intent:
+  - cancel_order (confidence: 0.9)
+
+Entities:
+  - order_id: "PO-2024-089"
+  - order_quantity: 20
+  - action_type: "cancel"
+
+================================================================================
+GROUP 4: FEATURE - "PAYMENT & PRICING"
+================================================================================
+
+--- Tuple 10 ---
+Feature: Payment & Pricing
+Persona: Price-Conscious Shopper
+Scenario: Price Inquiry
+
+Query: "RAM 32GB ราคาเท่าไหร่ มีโปรโมชั่นไหม"
+
+Intent:
+  - price_inquiry (confidence: 0.9)
+
+Entities:
+  - product_type: "RAM"
+  - product_spec: "32GB"
+  - promotion_inquiry: true
+
+================================================================================
+
+--- Tuple 11 ---
+Feature: Payment & Pricing
+Persona: Installment Seeker
+Scenario: Payment Method
+
+Query: "ผ่อนได้ไหมครับ 0% กี่เดือน"
+
+Intent:
+  - payment_inquiry (confidence: 0.85)
+
+Entities:
+  - payment_type: "installment"
+  - interest_rate: "0%"
+  - inquiry_type: "duration"
+
+================================================================================
+
+--- Tuple 12 ---
+Feature: Payment & Pricing
+Persona: Verified Buyer
+Scenario: Payment Confirmation
+
+Query: "โอนเงินไปแล้ว 45,900 บาท ออเดอร์ #ORD99887"
+
+Intent:
+  - payment_confirmation (confidence: 0.95)
+
+Entities:
+  - payment_amount: 45900
+  - payment_status: "transferred"
+  - order_id: "ORD99887"
+
+================================================================================
+GROUP 5: FEATURE - "AFTER SALES SERVICE"
+================================================================================
+
+--- Tuple 13 ---
+Feature: After Sales Service
+Persona: Warranty User
+Scenario: Warranty Claim
+
+Query: "การ์ดจอเสียใช้งานได้แค่ 3 เดือน มีประกันไหม"
+
+Intent:
+  - warranty_claim (confidence: 0.9)
+
+Entities:
+  - product_type: "graphics card"
+  - issue_type: "defective"
+  - usage_duration: "3 months"
+  - inquiry_type: "warranty"
+
+================================================================================
+
+--- Tuple 14 ---
+Feature: After Sales Service
+Persona: Dissatisfied Customer
+Scenario: Return Request
+
+Query: "ของไม่ตรงสเปค ขอคืนสินค้าได้ไหม"
+
+Intent:
+  - return_request (confidence: 0.85)
+
+Entities:
+  - issue_type: "wrong specification"
+  - action_type: "return"
+
+================================================================================
+
+--- Tuple 15 ---
+Feature: After Sales Service
+Persona: DIY Enthusiast
+Scenario: Technical Support
+
+Query: "ติดตั้ง SSD M.2 แล้ว BIOS ไม่เจอ ช่วยแนะนำหน่อย"
+
+Intent:
+  - technical_support (confidence: 0.9)
+
+Entities:
+  - product_type: "SSD M.2"
+  - issue_type: "installation problem"
+  - technical_detail: "BIOS not detecting"
+
+================================================================================
+GROUP 6: FEATURE - "GENERAL INTERACTION"
+================================================================================
+
+--- Tuple 16 ---
+Feature: General Interaction
+Persona: New Visitor
+Scenario: Greeting
+
+Query: "สวัสดีครับ ร้านเปิดกี่โมง"
+
+Intent:
+  - greet (confidence: 0.7)
+  - store_info (confidence: 0.8)
+
+Entities:
+  - inquiry_type: "operating hours"
+
+================================================================================
+
+--- Tuple 17 ---
+Feature: General Interaction
+Persona: Satisfied Customer
+Scenario: Farewell
+
+Query: "ขอบคุณครับ ได้คำตอบแล้ว"
+
+Intent:
+  - farewell (confidence: 0.9)
+  - gratitude (confidence: 0.85)
+
+Entities:
+  - sentiment: "satisfied"
+
+================================================================================
+
+--- Tuple 18 ---
+Feature: General Interaction
+Persona: Information Seeker
+Scenario: Store Location
+
+Query: "มีสาขาในกรุงเทพไหม อยู่แถวไหนบ้าง"
+
+Intent:
+  - store_info (confidence: 0.9)
+
+Entities:
+  - inquiry_type: "branch location"
+  - location: "Bangkok"
