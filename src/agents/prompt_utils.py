@@ -6,22 +6,25 @@ from typing import Dict, Mapping, Optional
 # Hard-coded mock values for the Go-style template placeholders used in prompts.
 # Extend here if new placeholders appear in any agent prompt.
 MOCK_TEMPLATE_VARIABLES: Dict[str, str] = {
-    # Delimiters
+    # ====== Delimiters for intent agent placeholders ======
     "{{.TupleDelimiter}}": "<||>",
     "{{.RecordDelimiter}}": "##",
     "{{.CompletedDelimiter}}": "<|COMPLETED|>",
     # Intent agent/runtime placeholders
-    "{{.Intents}}": "greet:0.30,book_flight:0.90,cancel_flight:0.70",
-    # Entity + response agent placeholders
+    "{{.Intents}}": "greet:0.30,inquire_product:0.90,check_stock:0.80,warranty_claim:0.70,technical_support:0.60,buy_product:0.90",
+    # ====== Entity agent placeholders ======
     "{{.Intent}}": "greet",
     "{{.Entities}}": "[]",
     "{{.MissingEntities}}": "[]",
-    # Response agent context
+    # ====== Entity agent placeholders ======
     "{{.Language}}": "Thai",
     "{{.Sentiment}}": "neutral",
     "{{.Formality}}": "friendly",
     "{{.Instruction}}": "Be concise and helpful.",
     "{{.Restriction}}": "",
+    "{{.Action}}": "knowledge_search",
+    "{{.AllowedTools}}": "['knowledge_search', 'calculator']",
+    "{{.UnknownIntent}}": "",
 }
 
 
@@ -100,12 +103,39 @@ def _render_sentiment_block(prompt: str, mapping: Mapping[str, str]) -> str:
     return pattern.sub(repl, prompt)
 
 
+def _render_unknown_intent_block(prompt: str, mapping: Mapping[str, str]) -> str:
+    """Handle {{if .UnknownIntent}} blocks."""
+    pattern = re.compile(r"{{if\s+\.UnknownIntent}}(.*?){{end}}", re.DOTALL)
+
+    def repl(match: re.Match[str]) -> str:
+        content_if = match.group(1)
+        return content_if if _is_truthy(mapping.get("{{.UnknownIntent}}", "")) else ""
+
+    return pattern.sub(repl, prompt)
+
+
+def _render_entities_block(prompt: str, mapping: Mapping[str, str]) -> str:
+    """Handle {{if .Entities}} blocks (including {{- if .Entities}})."""
+    pattern = re.compile(r"{{-?\s*if\s+\.Entities}}(.*?){{-?\s*end}}", re.DOTALL)
+
+    def repl(match: re.Match[str]) -> str:
+        content_if = match.group(1)
+        # Check if Entities is not empty JSON array "[]" and not empty string
+        entities = mapping.get("{{.Entities}}", "[]")
+        is_present = _is_truthy(entities) and entities != "[]"
+        return content_if if is_present else ""
+
+    return pattern.sub(repl, prompt)
+
+
 def _render_conditionals(prompt: str, mapping: Mapping[str, str]) -> str:
     """Resolve the limited set of Go-template conditionals we use."""
     prompt = _render_restriction_block(prompt, mapping)
     prompt = _render_language_block(prompt, mapping)
     prompt = _render_formality_block(prompt, mapping)
     prompt = _render_sentiment_block(prompt, mapping)
+    prompt = _render_unknown_intent_block(prompt, mapping)
+    prompt = _render_entities_block(prompt, mapping)
     return prompt
 
 
