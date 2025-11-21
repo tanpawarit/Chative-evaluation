@@ -4,8 +4,8 @@ from langchain.agents import AgentExecutor, create_tool_calling_agent
 from langchain_openai import ChatOpenAI
 
 from agents.response_agent.prompts import get_prompt
-from shared.common_tools import COMMON_TOOLS
-from shared.knowledge_tools import KNOWLEDGE_TOOLS
+from shared.tools.common_tools import COMMON_TOOLS
+from shared.tools.knowledge_tools import KNOWLEDGE_TOOLS
 
 
 def create_agent(model: Optional[ChatOpenAI] = None) -> AgentExecutor:
