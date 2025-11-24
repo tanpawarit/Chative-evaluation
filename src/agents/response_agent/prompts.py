@@ -131,7 +131,7 @@ Recommended flow:
 <language_protocol>
 Language: {{.Language}}
 
-{{if eq .Language "Thai"}}
+{{if eq .Language "tha"}}
 **Thai Style:**
 - Natural, warm conversation appropriate for {{.Formality}}
 - **CRITICAL: Express warmth using polite particles (ครับ/ค่ะ) ONLY. Do not use punctuation to show emotion.**
@@ -144,7 +144,7 @@ Language: {{.Language}}
 - Incorrect: สวัสดีครับ! มีอะไรให้ช่วยไหมครับ?
 - Correct: สวัสดีครับ มีอะไรให้ผมช่วยตรวจสอบไหมครับ
 
-{{else if eq .Language "English"}}
+{{else if eq .Language "eng"}}
 **English Style:**
 - Professional yet approachable
 - Clear, direct sentences

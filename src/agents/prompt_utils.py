@@ -17,7 +17,7 @@ MOCK_TEMPLATE_VARIABLES: Dict[str, str] = {
     "{{.Entities}}": "[]",
     "{{.MissingEntities}}": "[]",
     # ====== Entity agent placeholders ======
-    "{{.Language}}": "Thai",
+    "{{.Language}}": "tha",
     "{{.Sentiment}}": "neutral",
     "{{.Formality}}": "friendly",
     "{{.Instruction}}": "Be concise and helpful.",
@@ -47,15 +47,15 @@ def _render_restriction_block(prompt: str, mapping: Mapping[str, str]) -> str:
 def _render_language_block(prompt: str, mapping: Mapping[str, str]) -> str:
     """Resolve the language conditional block."""
     pattern = re.compile(
-        r"{{if eq \.Language \"Thai\"}}(.*?){{else if eq \.Language \"English\"}}(.*?){{else}}(.*?){{end}}",
+        r"{{if eq \.Language \"tha\"}}(.*?){{else if eq \.Language \"eng\"}}(.*?){{else}}(.*?){{end}}",
         re.DOTALL,
     )
 
     def repl(match: re.Match[str]) -> str:
         lang = mapping.get("{{.Language}}", "").lower()
-        if lang == "thai":
+        if lang == "tha":
             return match.group(1)
-        if lang == "english":
+        if lang == "eng":
             return match.group(2)
         return match.group(3)
 
