@@ -11,7 +11,7 @@ MOCK_TEMPLATE_VARIABLES: Dict[str, str] = {
     "{{.RecordDelimiter}}": "##",
     "{{.CompletedDelimiter}}": "<|COMPLETED|>",
     # Intent agent/runtime placeholders
-    "{{.Intents}}": "greet:0.30,inquire_product:0.90,check_stock:0.80,warranty_claim:0.70,technical_support:0.60,buy_product:0.90",
+    "{{.Intents}}": "greet:0.30,inquire_product:0.90,check_stock:0.80,warranty_claim:0.70,technical_support:0.60",
     # ====== Entity agent placeholders ======
     "{{.Intent}}": "greet",
     "{{.Entities}}": "[]",
