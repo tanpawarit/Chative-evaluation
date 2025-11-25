@@ -1,0 +1,22 @@
+[
+  {
+    "intent": "inquire_product",
+    "description": "User asks about product price, specs, or availability details (general inquiry)."
+  },
+  {
+    "intent": "greet",
+    "description": "User says hello or asks if anyone is there."
+  },
+  {
+    "intent": "check_stock",
+    "description": "User specifically asks if a product is in stock or available."
+  },
+  {
+    "intent": "warranty_claim",
+    "description": "User asks about warranty, claiming warranty, or returning a broken product."
+  },
+  {
+    "intent": "technical_support",
+    "description": "User reports a technical issue, error code, or asks for troubleshooting help."
+  }
+]

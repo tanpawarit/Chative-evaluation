@@ -9,8 +9,6 @@ DeepEval harness for the Intent Agent.
 from __future__ import annotations
 
 import argparse
-import json
-import os
 import sys
 from pathlib import Path
 from typing import Iterable, List
@@ -30,8 +28,9 @@ sys.path.append(str(PROJECT_ROOT / "src"))
 from agents.prompt_utils import apply_mock_template_vars  # noqa: E402
 from agents.intent_agent import prompts as intent_prompts  # noqa: E402
 from eval_generation.intent_agent.goldens import (  # noqa: E402
-    SEED_GOLDENS,
+    GOLDENS_PATH,
     IntentGolden,
+    load_goldens,
 )
 
 
@@ -116,6 +115,7 @@ def build_test_cases(
     # Collect all unique intents to form the candidate list
     # In a real scenario, this might come from a database or config
     all_intents = sorted(list(set(g.intent for g in goldens)))
+    # TODO: Add priority in real scenario
     # Assign default priority of 1.0 to all
     intents_str = ", ".join([f"{i}:1.0" for i in all_intents])
 
@@ -163,8 +163,15 @@ def main():
     args = parse_args()
 
     llm = ChatOpenAI(model=args.model, temperature=0)
-    goldens = list(SEED_GOLDENS)
-    # Note: Synthesizer logic removed as it generates RAG answers, not intent labels.
+    
+    # Load goldens from JSON
+    goldens_file = GOLDENS_PATH
+    if not goldens_file.exists():
+        print(f"Error: Goldens file not found at {goldens_file}")
+        print("Please run 'uv run eval_generation/intent_agent/generate_goldens.py' first.")
+        sys.exit(1)
+
+    goldens = load_goldens(goldens_file)
 
     test_cases = build_test_cases(goldens, llm)
     metric = IntentAccuracyMetric(threshold=args.threshold)

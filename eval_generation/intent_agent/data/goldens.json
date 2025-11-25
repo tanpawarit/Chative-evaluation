@@ -1,0 +1,127 @@
+[
+  {
+    "name": "inquire_product_gen_4985",
+    "input": "ราคาของ iPhone 13 ตอนนี้เท่าไหร่คะ?",
+    "intent": "inquire_product"
+  },
+  {
+    "name": "inquire_product_gen_6398",
+    "input": "มีเสื้อยืดสีดำไซส์ M ไหมครับ?",
+    "intent": "inquire_product"
+  },
+  {
+    "name": "inquire_product_gen_5908",
+    "input": "อยากทราบสเปคของโน้ตบุ๊ก Asus รุ่นใหม่ล่าสุดค่ะ",
+    "intent": "inquire_product"
+  },
+  {
+    "name": "inquire_product_gen_2682",
+    "input": "สินค้าตัวนี้ยังมีอยู่ในสต็อกไหมครับ?",
+    "intent": "inquire_product"
+  },
+  {
+    "name": "inquire_product_gen_2442",
+    "input": "Please let me know if the Samsung Galaxy Buds are available in red color.",
+    "intent": "inquire_product"
+  },
+  {
+    "name": "greet_gen_4676",
+    "input": "สวัสดีครับ มีใครอยู่ไหม",
+    "intent": "greet"
+  },
+  {
+    "name": "greet_gen_1701",
+    "input": "Hello! มีใคร online อยู่หรือเปล่าคะ",
+    "intent": "greet"
+  },
+  {
+    "name": "greet_gen_2826",
+    "input": "ฮัลโหลๆ ทดสอบเสียงหน่อย",
+    "intent": "greet"
+  },
+  {
+    "name": "greet_gen_5076",
+    "input": "หวัดดีค่ะ พอดีมีคำถามค่ะ",
+    "intent": "greet"
+  },
+  {
+    "name": "greet_gen_3707",
+    "input": "Hey! ขอถามอะไรหน่อยได้มั้ย",
+    "intent": "greet"
+  },
+  {
+    "name": "check_stock_gen_5125",
+    "input": "- สวัสดีค่ะ อยากทราบว่า iPhone 13 ยังมีของอยู่ไหมคะ?",
+    "intent": "check_stock"
+  },
+  {
+    "name": "check_stock_gen_1845",
+    "input": "- ขอเช็คหน่อยครับว่าเสื้อแจ็คเก็ตสีดำของรุ่นนี้ยังมีไซส์ L อยู่รึเปล่า?",
+    "intent": "check_stock"
+  },
+  {
+    "name": "check_stock_gen_0989",
+    "input": "- มีสินค้า Sony WH-1000XM4 พร้อมส่งไหมครับ?",
+    "intent": "check_stock"
+  },
+  {
+    "name": "check_stock_gen_0859",
+    "input": "- ตอนนี้ยังมีครีมทาหน้าตัวที่เป็นตัวฮิตอยู่ไหม?",
+    "intent": "check_stock"
+  },
+  {
+    "name": "check_stock_gen_4677",
+    "input": "- สินค้าโค้ด A1234 ยังมีจำหน่ายในสต็อกอยู่หรือเปล่าครับ?",
+    "intent": "check_stock"
+  },
+  {
+    "name": "warranty_claim_gen_1483",
+    "input": "สินค้าที่ซื้อมาจากร้านตัวแทนรับประกันยังไงคะ?",
+    "intent": "warranty_claim"
+  },
+  {
+    "name": "warranty_claim_gen_8219",
+    "input": "ขอข้อมูลการเคลมประกันสำหรับเครื่องซักผ้า LG หน่อยครับ",
+    "intent": "warranty_claim"
+  },
+  {
+    "name": "warranty_claim_gen_4105",
+    "input": "อยากทราบว่าผลิตภัณฑ์มือถือรุ่นนี้มีประกันกี่ปีครับ?",
+    "intent": "warranty_claim"
+  },
+  {
+    "name": "warranty_claim_gen_0525",
+    "input": "ไอโฟนของฉันหน้าจอแตก ประกันจะครอบคลุมไหมคะ?",
+    "intent": "warranty_claim"
+  },
+  {
+    "name": "warranty_claim_gen_7980",
+    "input": "สินค้ามี defect code 1027 ส่งเคลมได้ที่ไหนครับ?",
+    "intent": "warranty_claim"
+  },
+  {
+    "name": "technical_support_gen_3837",
+    "input": "อุปกรณ์ Bluetooth ของฉันเชื่อมต่อไม่ได้ ช่วยหน่อยได้ไหม",
+    "intent": "technical_support"
+  },
+  {
+    "name": "technical_support_gen_6397",
+    "input": "มีปัญหากับการอัปเดตซอฟต์แวร์ล่าสุด เข้าไปที่หน้าจอหลักไม่ได้เลย",
+    "intent": "technical_support"
+  },
+  {
+    "name": "technical_support_gen_3837",
+    "input": "รบกวนช่วยดู error code 404 บนหน้าจอคอมพิวเตอร์หน่อยครับ",
+    "intent": "technical_support"
+  },
+  {
+    "name": "technical_support_gen_7725",
+    "input": "แอปพลิเคชันเด้งออกตลอดเวลา มีวิธีแก้ไหมคะ",
+    "intent": "technical_support"
+  },
+  {
+    "name": "technical_support_gen_4759",
+    "input": "My laptop keeps freezing when I open Excel, any suggestions?",
+    "intent": "technical_support"
+  }
+]
