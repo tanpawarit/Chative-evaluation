@@ -9,6 +9,7 @@ DeepEval harness for the Intent Agent.
 from __future__ import annotations
 
 import argparse
+import json
 import sys
 from pathlib import Path
 from typing import Iterable, List
@@ -29,6 +30,7 @@ from agents.prompt_utils import apply_mock_template_vars  # noqa: E402
 from agents.intent_agent import prompts as intent_prompts  # noqa: E402
 from eval_generation.intent_agent.goldens import (  # noqa: E402
     GOLDENS_PATH,
+    INTENTS_PATH,
     IntentGolden,
     load_goldens,
 )
@@ -112,12 +114,32 @@ class IntentAccuracyMetric(BaseMetric):
 def build_test_cases(
     goldens: Iterable[IntentGolden], llm: ChatOpenAI
 ) -> List[LLMTestCase]:
-    # Collect all unique intents to form the candidate list
-    # In a real scenario, this might come from a database or config
-    all_intents = sorted(list(set(g.intent for g in goldens)))
-    # TODO: Add priority in real scenario
-    # Assign default priority of 1.0 to all
-    intents_str = ", ".join([f"{i}:1.0" for i in all_intents])
+    # Collect all unique intents from goldens
+    all_intents = sorted(set(g.intent for g in goldens))
+
+    # Load priorities from intents.json
+    with open(INTENTS_PATH, "r", encoding="utf-8") as f:
+        intents_data = json.load(f)
+
+    intent_priorities = {}
+    if isinstance(intents_data, dict):
+        # Fallback: if config is a simple mapping, default priority to 1.0
+        intent_priorities = {name: 1.0 for name in intents_data.keys()}
+    else:
+        for item in intents_data:
+            name = item.get("intent")
+            if not name:
+                continue
+            priority = item.get("priority", 1.0)
+            try:
+                intent_priorities[name] = float(priority)
+            except (TypeError, ValueError):
+                intent_priorities[name] = 1.0
+
+    # Build intents string like: "greet:0.30,inquire_product:0.90,..."
+    intents_str = ",".join(
+        f"{intent}:{intent_priorities.get(intent, 1.0):.2f}" for intent in all_intents
+    )
 
     test_cases: List[LLMTestCase] = []
     chain = build_chain(intents_str, llm)

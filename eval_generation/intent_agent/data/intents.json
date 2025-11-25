@@ -1,22 +1,27 @@
 [
   {
     "intent": "inquire_product",
-    "description": "User asks about product price, specs, or availability details (general inquiry)."
+    "description": "User asks about product price, specs, or availability details (general inquiry).",
+    "priority": 1.0
   },
   {
     "intent": "greet",
-    "description": "User says hello or asks if anyone is there."
+    "description": "User says hello or asks if anyone is there.",
+    "priority": 0.2
   },
   {
     "intent": "check_stock",
-    "description": "User specifically asks if a product is in stock or available."
+    "description": "User specifically asks if a product is in stock or available.",
+    "priority": 1.0
   },
   {
     "intent": "warranty_claim",
-    "description": "User asks about warranty, claiming warranty, or returning a broken product."
+    "description": "User asks about warranty, claiming warranty, or returning a broken product.",
+    "priority": 1.0
   },
   {
     "intent": "technical_support",
-    "description": "User reports a technical issue, error code, or asks for troubleshooting help."
+    "description": "User reports a technical issue, error code, or asks for troubleshooting help.",
+    "priority": 1.0
   }
 ]
