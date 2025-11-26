@@ -28,12 +28,15 @@ Given a user utterance, detect and extract the user's **intent**, **language**, 
 
 <runtime_input>
 **Fill at runtime:**
-- intents: {{.Intents}}
+- intents: 
+{{.Intents}}
+- descriptions:
+{{.Descriptions}}
 </runtime_input>
 
 <steps>
 1. **INTENTS (top 3 max):**
-- Consider all provided intents with their priority scores.
+- Consider all provided intents with their priority scores and descriptions.
 - If none is semantically relevant, output ONLY the UNKNOWN intent line as specified above (no other intents).
 - Otherwise, choose up to 3 most likely intents.
 - Break ties by higher priority_score → higher confidence → earlier occurrence in text.
@@ -91,7 +94,6 @@ Output:
 (language{{.TupleDelimiter}}eng{{.TupleDelimiter}}0.98{{.TupleDelimiter}}1){{.RecordDelimiter}}
 (sentiment{{.TupleDelimiter}}neutral{{.TupleDelimiter}}0.70){{.RecordDelimiter}}
 {{.CompletedDelimiter}}
-
 """
 
 

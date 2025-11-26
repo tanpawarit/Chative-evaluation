@@ -36,13 +36,14 @@ from eval_generation.intent_agent.goldens import (  # noqa: E402
 )
 
 
-def build_prompt(intents_str: str) -> ChatPromptTemplate:
+def build_prompt(intents_str: str, descriptions_str: str) -> ChatPromptTemplate:
     """Render the intent prompt with candidate intents."""
     overrides = {
         "{{.TupleDelimiter}}": "\t",
         "{{.RecordDelimiter}}": "##",
         "{{.CompletedDelimiter}}": "<|COMPLETED|>",
         "{{.Intents}}": intents_str,
+        "{{.Descriptions}}": descriptions_str,
     }
     prompt_text = apply_mock_template_vars(intent_prompts.SYSTEM_PROMPT, overrides)
     return ChatPromptTemplate.from_messages(
@@ -53,8 +54,8 @@ def build_prompt(intents_str: str) -> ChatPromptTemplate:
     )
 
 
-def build_chain(intents_str: str, llm: ChatOpenAI):
-    prompt = build_prompt(intents_str)
+def build_chain(intents_str: str, descriptions_str: str, llm: ChatOpenAI):
+    prompt = build_prompt(intents_str, descriptions_str)
     parser = StrOutputParser()
     return prompt | llm | parser
 
@@ -122,27 +123,36 @@ def build_test_cases(
         intents_data = json.load(f)
 
     intent_priorities = {}
+    intent_descriptions = {}
     if isinstance(intents_data, dict):
         # Fallback: if config is a simple mapping, default priority to 1.0
         intent_priorities = {name: 1.0 for name in intents_data.keys()}
+        intent_descriptions = {name: str(val) for name, val in intents_data.items()}
     else:
         for item in intents_data:
             name = item.get("intent")
             if not name:
                 continue
             priority = item.get("priority", 1.0)
+            description = item.get("description", "")
             try:
                 intent_priorities[name] = float(priority)
             except (TypeError, ValueError):
                 intent_priorities[name] = 1.0
+            intent_descriptions[name] = description
 
     # Build intents string like: "greet:0.30,inquire_product:0.90,..."
     intents_str = ",".join(
         f"{intent}:{intent_priorities.get(intent, 1.0):.2f}" for intent in all_intents
     )
 
+    # Build descriptions string
+    descriptions_str = "\n".join(
+        f"{intent}: {intent_descriptions.get(intent, '')}" for intent in all_intents
+    )
+
     test_cases: List[LLMTestCase] = []
-    chain = build_chain(intents_str, llm)
+    chain = build_chain(intents_str, descriptions_str, llm)
 
     for golden in goldens:
         output = chain.invoke({"input": golden.input})
