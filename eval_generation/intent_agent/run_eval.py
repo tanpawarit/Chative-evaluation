@@ -163,7 +163,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--model",
         type=str,
-        default="gpt-4o",
+        default="gpt-4o-mini",
         help="OpenAI model to use.",
     )
     parser.add_argument(

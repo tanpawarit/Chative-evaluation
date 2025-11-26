@@ -1,127 +1,127 @@
 [
   {
-    "name": "inquire_product_gen_4985",
-    "input": "ราคาของ iPhone 13 ตอนนี้เท่าไหร่คะ?",
+    "name": "inquire_product_gen_7899",
+    "input": "ราคาของ iPhone 14 ตอนนี้เท่าไหร่คะ",
     "intent": "inquire_product"
   },
   {
-    "name": "inquire_product_gen_6398",
-    "input": "มีเสื้อยืดสีดำไซส์ M ไหมครับ?",
+    "name": "inquire_product_gen_9952",
+    "input": "มีสินค้า MacBook Air รุ่นล่าสุดในสต็อกไหม",
     "intent": "inquire_product"
   },
   {
-    "name": "inquire_product_gen_5908",
-    "input": "อยากทราบสเปคของโน้ตบุ๊ก Asus รุ่นใหม่ล่าสุดค่ะ",
+    "name": "inquire_product_gen_9203",
+    "input": "ช่วยบอกรายละเอียดสเปคของ Samsung Galaxy S22 หน่อยค่ะ",
     "intent": "inquire_product"
   },
   {
-    "name": "inquire_product_gen_2682",
-    "input": "สินค้าตัวนี้ยังมีอยู่ในสต็อกไหมครับ?",
+    "name": "inquire_product_gen_3223",
+    "input": "หูฟังรุ่น Bose QC 45 มีโปรโมชั่นอะไรอยู่บ้างครับ",
     "intent": "inquire_product"
   },
   {
-    "name": "inquire_product_gen_2442",
-    "input": "Please let me know if the Samsung Galaxy Buds are available in red color.",
+    "name": "inquire_product_gen_8812",
+    "input": "ขอดูข้อมูลเกี่ยวกับเครื่องซักผ้า LG รุ่นใหม่ล่าสุดหน่อยค่ะ",
     "intent": "inquire_product"
   },
   {
-    "name": "greet_gen_4676",
-    "input": "สวัสดีครับ มีใครอยู่ไหม",
+    "name": "greet_gen_9473",
+    "input": "สวัสดีค่ะ มีใครอยู่บ้างไหมคะ?",
     "intent": "greet"
   },
   {
-    "name": "greet_gen_1701",
-    "input": "Hello! มีใคร online อยู่หรือเปล่าคะ",
+    "name": "greet_gen_8532",
+    "input": "Hello! Is anyone online?",
     "intent": "greet"
   },
   {
-    "name": "greet_gen_2826",
-    "input": "ฮัลโหลๆ ทดสอบเสียงหน่อย",
+    "name": "greet_gen_1887",
+    "input": "ทักทายครับ อยากถามอะไรนิดหน่อย",
     "intent": "greet"
   },
   {
-    "name": "greet_gen_5076",
-    "input": "หวัดดีค่ะ พอดีมีคำถามค่ะ",
+    "name": "greet_gen_3461",
+    "input": "สวัสดีตอนเช้า ทุกคนพร้อมเริ่มงานหรือยังครับ?",
     "intent": "greet"
   },
   {
-    "name": "greet_gen_3707",
-    "input": "Hey! ขอถามอะไรหน่อยได้มั้ย",
+    "name": "greet_gen_3990",
+    "input": "ฮัลโหล มีใครรับสายไหม?",
     "intent": "greet"
   },
   {
-    "name": "check_stock_gen_5125",
-    "input": "- สวัสดีค่ะ อยากทราบว่า iPhone 13 ยังมีของอยู่ไหมคะ?",
+    "name": "check_stock_gen_0922",
+    "input": "มีรองเท้า Nike Air รุ่นล่าสุดอยู่ในสต็อกไหมครับ",
     "intent": "check_stock"
   },
   {
-    "name": "check_stock_gen_1845",
-    "input": "- ขอเช็คหน่อยครับว่าเสื้อแจ็คเก็ตสีดำของรุ่นนี้ยังมีไซส์ L อยู่รึเปล่า?",
+    "name": "check_stock_gen_2703",
+    "input": "ขอโทษนะคะ อยากทราบว่ามีโทรศัพท์ iPhone 14 Pro สีม่วงขายอยู่ไหม",
     "intent": "check_stock"
   },
   {
-    "name": "check_stock_gen_0989",
-    "input": "- มีสินค้า Sony WH-1000XM4 พร้อมส่งไหมครับ?",
+    "name": "check_stock_gen_1067",
+    "input": "เสื้อแจ็คเก็ต Adidas ที่ลดราคา ยังมีของในร้านไหมครับ",
     "intent": "check_stock"
   },
   {
-    "name": "check_stock_gen_0859",
-    "input": "- ตอนนี้ยังมีครีมทาหน้าตัวที่เป็นตัวฮิตอยู่ไหม?",
+    "name": "check_stock_gen_1817",
+    "input": "Hello, is the PlayStation 5 available in your store?",
     "intent": "check_stock"
   },
   {
-    "name": "check_stock_gen_4677",
-    "input": "- สินค้าโค้ด A1234 ยังมีจำหน่ายในสต็อกอยู่หรือเปล่าครับ?",
+    "name": "check_stock_gen_5001",
+    "input": "พอจะมีหม้อหุงข้าวไฟฟ้ารุ่นใหม่ล่าสุดของ Sharp อยู่ไหมคะ?",
     "intent": "check_stock"
   },
   {
-    "name": "warranty_claim_gen_1483",
-    "input": "สินค้าที่ซื้อมาจากร้านตัวแทนรับประกันยังไงคะ?",
+    "name": "warranty_claim_gen_0854",
+    "input": "ขอทราบขั้นตอนการเคลมประกันของโทรศัพท์รุ่นนี้หน่อยค่ะ",
     "intent": "warranty_claim"
   },
   {
-    "name": "warranty_claim_gen_8219",
-    "input": "ขอข้อมูลการเคลมประกันสำหรับเครื่องซักผ้า LG หน่อยครับ",
+    "name": "warranty_claim_gen_3289",
+    "input": "ถ้าหม้อหุงข้าวพังในช่วงประกัน เรายังเคลมได้อยู่มั้ยครับ?",
     "intent": "warranty_claim"
   },
   {
-    "name": "warranty_claim_gen_4105",
-    "input": "อยากทราบว่าผลิตภัณฑ์มือถือรุ่นนี้มีประกันกี่ปีครับ?",
+    "name": "warranty_claim_gen_0831",
+    "input": "Hi, how do I claim warranty for my laptop? It's not charging anymore.",
     "intent": "warranty_claim"
   },
   {
-    "name": "warranty_claim_gen_0525",
-    "input": "ไอโฟนของฉันหน้าจอแตก ประกันจะครอบคลุมไหมคะ?",
+    "name": "warranty_claim_gen_6602",
+    "input": "ต้องทำยังไงบ้างถ้าต้องการส่งคืนสินค้าเพราะหน้าจอแตกค่ะ",
     "intent": "warranty_claim"
   },
   {
-    "name": "warranty_claim_gen_7980",
-    "input": "สินค้ามี defect code 1027 ส่งเคลมได้ที่ไหนครับ?",
+    "name": "warranty_claim_gen_2171",
+    "input": "สินค้าที่ซื้อเมื่อเดือนที่แล้วแต่มีปัญหา error code 404 สามารถเคลมได้มั้ย?",
     "intent": "warranty_claim"
   },
   {
-    "name": "technical_support_gen_3837",
-    "input": "อุปกรณ์ Bluetooth ของฉันเชื่อมต่อไม่ได้ ช่วยหน่อยได้ไหม",
+    "name": "technical_support_gen_4594",
+    "input": "ทำไมโน้ตบุ๊คผมเปิดไม่ติดเลยคะ มีวิธีแก้ไขมั้ย",
     "intent": "technical_support"
   },
   {
-    "name": "technical_support_gen_6397",
-    "input": "มีปัญหากับการอัปเดตซอฟต์แวร์ล่าสุด เข้าไปที่หน้าจอหลักไม่ได้เลย",
+    "name": "technical_support_gen_3341",
+    "input": "ช่วยหน่อยครับ ผมเจอ error code 404 บนเว็บไซต์ของคุณ",
     "intent": "technical_support"
   },
   {
-    "name": "technical_support_gen_3837",
-    "input": "รบกวนช่วยดู error code 404 บนหน้าจอคอมพิวเตอร์หน่อยครับ",
+    "name": "technical_support_gen_6939",
+    "input": "WiFi หลุดบ่อยมาก มีคำแนะนำในการแก้ไขปัญหานี้ไหม",
     "intent": "technical_support"
   },
   {
-    "name": "technical_support_gen_7725",
-    "input": "แอปพลิเคชันเด้งออกตลอดเวลา มีวิธีแก้ไหมคะ",
+    "name": "technical_support_gen_0730",
+    "input": "ทำไมแอพถึงโหลดช้ามากบน iPhone ของฉัน",
     "intent": "technical_support"
   },
   {
-    "name": "technical_support_gen_4759",
-    "input": "My laptop keeps freezing when I open Excel, any suggestions?",
+    "name": "technical_support_gen_4905",
+    "input": "ฮัลโหล เซอร์เวอร์ล่มอยู่หรอครับ เช็คให้ที",
     "intent": "technical_support"
   }
 ]
