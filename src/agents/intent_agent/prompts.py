@@ -11,10 +11,9 @@ Given a user utterance, detect and extract the user's **intent**, **language**, 
 **STRICT RULES:**
 1. Extract intents ONLY if they appear in the provided list.
 2. DO NOT create new intents not in the list, EXCEPT use the literal "unknown" as a special fallback when no intent fits.
-3. If input doesn't match any provided intent with sufficient confidence, output ONLY:
+3. If NO intents are provided, or if input doesn't match any provided intent with sufficient confidence, output ONLY:
 	(intent{{.TupleDelimiter}}unknown{{.TupleDelimiter}}0.00{{.TupleDelimiter}}0.00)
-4. If there is a reasonable match, choose the closest intents from the list (top 3 max).
-5. Common greetings (สวัสดี, หวัดดี, hello, hi, good morning) MUST be "greet".
+4. If there is a reasonable match, choose the closest intents from the list (top 3 max). 
 
 **Delimiters:**
 - {{.TupleDelimiter}} = "<||>" (use this exact literal between tuple elements)
@@ -37,7 +36,7 @@ Given a user utterance, detect and extract the user's **intent**, **language**, 
 <steps>
 1. **INTENTS (top 3 max):**
 - Consider all provided intents with their priority scores and descriptions.
-- If none is semantically relevant, output ONLY the UNKNOWN intent line as specified above (no other intents).
+- If the intent list is empty, or if none is semantically relevant, output ONLY the UNKNOWN intent line as specified above (no other intents).
 - Otherwise, choose up to 3 most likely intents.
 - Break ties by higher priority_score → higher confidence → earlier occurrence in text.
 - Format (each on its own line):

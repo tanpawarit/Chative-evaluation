@@ -1,7 +1,7 @@
 [
   {
     "intent": "inquire_product",
-    "description": "User asks about product price, specs, or availability details (general inquiry).",
+    "description": "User asks about product price, specs, or availability details.",
     "priority": 1.0
   },
   {

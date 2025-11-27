@@ -1,127 +1,152 @@
 [
   {
-    "name": "inquire_product_gen_7899",
-    "input": "ราคาของ iPhone 14 ตอนนี้เท่าไหร่คะ",
+    "name": "inquire_product_gen_0806",
+    "input": "ราคาของ iPhone 14 ตอนนี้เท่าไหร่คะ?",
     "intent": "inquire_product"
   },
   {
-    "name": "inquire_product_gen_9952",
-    "input": "มีสินค้า MacBook Air รุ่นล่าสุดในสต็อกไหม",
+    "name": "inquire_product_gen_9618",
+    "input": "มีเสื้อยืดสีขาวไซส์ M ในสต๊อกไหมครับ",
     "intent": "inquire_product"
   },
   {
-    "name": "inquire_product_gen_9203",
-    "input": "ช่วยบอกรายละเอียดสเปคของ Samsung Galaxy S22 หน่อยค่ะ",
+    "name": "inquire_product_gen_3320",
+    "input": "Can you tell me if the Samsung Galaxy Tab is available?",
     "intent": "inquire_product"
   },
   {
-    "name": "inquire_product_gen_3223",
-    "input": "หูฟังรุ่น Bose QC 45 มีโปรโมชั่นอะไรอยู่บ้างครับ",
+    "name": "inquire_product_gen_4315",
+    "input": "ช่วงนี้มีส่วนลดสำหรับเครื่องซักผ้าไหมคะ?",
     "intent": "inquire_product"
   },
   {
-    "name": "inquire_product_gen_8812",
-    "input": "ขอดูข้อมูลเกี่ยวกับเครื่องซักผ้า LG รุ่นใหม่ล่าสุดหน่อยค่ะ",
+    "name": "inquire_product_gen_2613",
+    "input": "รองเท้าวิ่งรุ่นใหม่ที่เพิ่งออกมาขายเมื่อไหร่ครับ?",
     "intent": "inquire_product"
   },
   {
-    "name": "greet_gen_9473",
-    "input": "สวัสดีค่ะ มีใครอยู่บ้างไหมคะ?",
+    "name": "greet_gen_0089",
+    "input": "สวัสดีค่ะ มีใครอยู่ไหมคะ?",
     "intent": "greet"
   },
   {
-    "name": "greet_gen_8532",
-    "input": "Hello! Is anyone online?",
+    "name": "greet_gen_0444",
+    "input": "Hello! มีคนรับสายไหมครับ?",
     "intent": "greet"
   },
   {
-    "name": "greet_gen_1887",
-    "input": "ทักทายครับ อยากถามอะไรนิดหน่อย",
+    "name": "greet_gen_0911",
+    "input": "หวัดดีฮะ มีใครออนไลน์บ้างหรือเปล่า?",
     "intent": "greet"
   },
   {
-    "name": "greet_gen_3461",
-    "input": "สวัสดีตอนเช้า ทุกคนพร้อมเริ่มงานหรือยังครับ?",
+    "name": "greet_gen_9863",
+    "input": "สวัสดีครับ อยากทราบว่ามีใครให้ความช่วยเหลือได้ไหมครับ?",
     "intent": "greet"
   },
   {
-    "name": "greet_gen_3990",
-    "input": "ฮัลโหล มีใครรับสายไหม?",
+    "name": "greet_gen_1354",
+    "input": "Hey there! ใครอยู่บ้างตอนนี้?",
     "intent": "greet"
   },
   {
-    "name": "check_stock_gen_0922",
-    "input": "มีรองเท้า Nike Air รุ่นล่าสุดอยู่ในสต็อกไหมครับ",
+    "name": "check_stock_gen_9177",
+    "input": "มี iPhone 13 Pro Max สีฟ้าในสต็อกไหมคะ",
     "intent": "check_stock"
   },
   {
-    "name": "check_stock_gen_2703",
-    "input": "ขอโทษนะคะ อยากทราบว่ามีโทรศัพท์ iPhone 14 Pro สีม่วงขายอยู่ไหม",
+    "name": "check_stock_gen_5273",
+    "input": "ขอโทษนะครับ อยากรู้ว่ามีเครื่องปริ้นเตอร์ยี่ห้อ Canon รุ่นล่าสุดอยู่ไหม",
     "intent": "check_stock"
   },
   {
-    "name": "check_stock_gen_1067",
-    "input": "เสื้อแจ็คเก็ต Adidas ที่ลดราคา ยังมีของในร้านไหมครับ",
+    "name": "check_stock_gen_4633",
+    "input": "Hello, do you have any Nike sneakers in stock?",
     "intent": "check_stock"
   },
   {
-    "name": "check_stock_gen_1817",
-    "input": "Hello, is the PlayStation 5 available in your store?",
+    "name": "check_stock_gen_1148",
+    "input": "รบกวนเช็คให้หน่อยค่ะว่าแล็ปท็อป Lenovo ที่ลดราคาอยู่ยังมีของไหม",
     "intent": "check_stock"
   },
   {
-    "name": "check_stock_gen_5001",
-    "input": "พอจะมีหม้อหุงข้าวไฟฟ้ารุ่นใหม่ล่าสุดของ Sharp อยู่ไหมคะ?",
+    "name": "check_stock_gen_5091",
+    "input": "ตอนนี้มีทีวี Samsung รุ่นนี้ขายอยู่หรือเปล่าครับ?",
     "intent": "check_stock"
   },
   {
-    "name": "warranty_claim_gen_0854",
-    "input": "ขอทราบขั้นตอนการเคลมประกันของโทรศัพท์รุ่นนี้หน่อยค่ะ",
+    "name": "warranty_claim_gen_8626",
+    "input": "สินค้าที่ซื้อไปมีปัญหา อยากทราบว่ายังเคลมได้อยู่ไหม?",
     "intent": "warranty_claim"
   },
   {
-    "name": "warranty_claim_gen_3289",
-    "input": "ถ้าหม้อหุงข้าวพังในช่วงประกัน เรายังเคลมได้อยู่มั้ยครับ?",
+    "name": "warranty_claim_gen_9221",
+    "input": "ขอข้อมูลเกี่ยวกับการเคลมประกันของโทรศัพท์รุ่น X1 หน่อยค่ะ",
     "intent": "warranty_claim"
   },
   {
-    "name": "warranty_claim_gen_0831",
-    "input": "Hi, how do I claim warranty for my laptop? It's not charging anymore.",
+    "name": "warranty_claim_gen_5686",
+    "input": "สินค้าเสียแค่เดือนเดียว รับเปลี่ยนหรือคืนเงินได้ไหมครับ",
     "intent": "warranty_claim"
   },
   {
-    "name": "warranty_claim_gen_6602",
-    "input": "ต้องทำยังไงบ้างถ้าต้องการส่งคืนสินค้าเพราะหน้าจอแตกค่ะ",
+    "name": "warranty_claim_gen_5097",
+    "input": "ต้องทำยังไงถ้าอยากเคลมประกันทีวียี่ห้อ Y ที่เพิ่งซื้อไป",
     "intent": "warranty_claim"
   },
   {
-    "name": "warranty_claim_gen_2171",
-    "input": "สินค้าที่ซื้อเมื่อเดือนที่แล้วแต่มีปัญหา error code 404 สามารถเคลมได้มั้ย?",
+    "name": "warranty_claim_gen_8461",
+    "input": "Hi, I need help with a warranty claim for my broken laptop, can you assist?",
     "intent": "warranty_claim"
   },
   {
-    "name": "technical_support_gen_4594",
-    "input": "ทำไมโน้ตบุ๊คผมเปิดไม่ติดเลยคะ มีวิธีแก้ไขมั้ย",
+    "name": "technical_support_gen_0343",
+    "input": "ช่วยดูให้หน่อยค่ะว่าทำไมโปรแกรม Photoshop ถึงค้างตอนเปิดไฟล์ใหญ่ๆ",
     "intent": "technical_support"
   },
   {
-    "name": "technical_support_gen_3341",
-    "input": "ช่วยหน่อยครับ ผมเจอ error code 404 บนเว็บไซต์ของคุณ",
+    "name": "technical_support_gen_3238",
+    "input": "ผมได้รับ error code 404 บนหน้าเว็บ ต้องแก้ยังไงครับ",
     "intent": "technical_support"
   },
   {
-    "name": "technical_support_gen_6939",
-    "input": "WiFi หลุดบ่อยมาก มีคำแนะนำในการแก้ไขปัญหานี้ไหม",
+    "name": "technical_support_gen_3939",
+    "input": "WiFi หลุดบ่อยมาก มีวิธีแก้ไหมครับ",
     "intent": "technical_support"
   },
   {
-    "name": "technical_support_gen_0730",
-    "input": "ทำไมแอพถึงโหลดช้ามากบน iPhone ของฉัน",
+    "name": "technical_support_gen_8561",
+    "input": "ทำไม iPhone ของฉันถึงไม่อัพเดท iOS ล่าสุดได้ครับ",
     "intent": "technical_support"
   },
   {
-    "name": "technical_support_gen_4905",
-    "input": "ฮัลโหล เซอร์เวอร์ล่มอยู่หรอครับ เช็คให้ที",
+    "name": "technical_support_gen_4165",
+    "input": "ช่วยแก้ไขปัญหาเสียงลำโพงไม่ออกบน Windows 10 ให้หน่อยค่ะ",
     "intent": "technical_support"
+  },
+  {
+    "name": "None_gen_0125",
+    "input": "ขอคำแนะนำในการเลือกสินค้าที่เหมาะกับฉันหน่อยค่ะ",
+    "intent": "unknown"
+  },
+  {
+    "name": "None_gen_8057",
+    "input": "ช่วยแนะนำร้านอาหารใกล้ๆ ที่อร่อยๆ หน่อยได้ไหม",
+    "intent": "unknown"
+  },
+  {
+    "name": "None_gen_0922",
+    "input": "ฉันต้องการเปลี่ยนที่อยู่ในการจัดส่งสินค้า",
+    "intent": "unknown"
+  },
+  {
+    "name": "None_gen_7054",
+    "input": "มีโปรโมชั่นอะไรบ้างตอนนี้",
+    "intent": "unknown"
+  },
+  {
+    "name": "None_gen_3436",
+    "input": "คุณคิดยังไงเกี่ยวกับสินค้านี้",
+    "intent": "unknown"
   }
 ]

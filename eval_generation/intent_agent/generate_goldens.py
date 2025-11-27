@@ -69,6 +69,48 @@ async def generate_for_intent(
     
     return new_goldens
 
+GENERATE_NEGATIVE_PROMPT = """You are a synthetic data generator for an intent classification system.
+Your task is to generate realistic user queries in Thai (and some English mixed is okay) that DO NOT match any of the following intents.
+
+Intents to AVOID:
+{intents_list}
+
+The queries should be:
+- Plausible things a user might say to a chatbot or customer service.
+- Ambiguous, irrelevant, or out-of-scope for the listed intents.
+- Natural sounding.
+- Return ONLY the queries, one per line.
+- Do not number the lines.
+
+Generate {count} such queries.
+"""
+
+async def generate_negative_examples(
+    llm,
+    all_intents: dict[str, str],
+    count: int = 5,
+) -> List[IntentGolden]:
+    intents_list = "\n".join(f"- {intent}: {desc}" for intent, desc in all_intents.items())
+    
+    prompt = ChatPromptTemplate.from_template(GENERATE_NEGATIVE_PROMPT)
+    chain = prompt | llm | StrOutputParser()
+
+    print(f"Generating {count} negative examples...")
+    output = await chain.ainvoke({
+        "intents_list": intents_list,
+        "count": count
+    })
+
+    new_goldens: List[IntentGolden] = []
+    
+    for line in output.strip().split("\n"):
+        line = line.strip()
+        if line:
+            name = f"None_gen_{hash(line) % 10000:04d}"
+            new_goldens.append(IntentGolden(name=name, input=line, intent="unknown"))
+    
+    return new_goldens
+
 async def main():
     load_dotenv()
     llm = ChatOpenAI(model="gpt-4o", temperature=0.7) # Higher temp for diversity
@@ -81,6 +123,10 @@ async def main():
             llm, intent, description, seed_examples=None, count=5
         )
         all_goldens.extend(new_goldens)
+
+    # Generate negative examples
+    negative_goldens = await generate_negative_examples(llm, intents, count=5)
+    all_goldens.extend(negative_goldens)
 
     save_goldens(all_goldens)
 
