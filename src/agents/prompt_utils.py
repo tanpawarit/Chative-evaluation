@@ -16,8 +16,8 @@ MOCK_TEMPLATE_VARIABLES: Dict[str, str] = {
     # ====== Entity agent placeholders ======
     "{{.Intent}}": "greet",
     "{{.Entities}}": "[]",
-    "{{.MissingEntities}}": "[]",
-    # ====== Entity agent placeholders ======
+    # ====== Response agent placeholders ======
+    "{{.MissingEntities}}": "[]", 
     "{{.Language}}": "tha",
     "{{.Sentiment}}": "neutral",
     "{{.Formality}}": "friendly",
@@ -129,6 +129,20 @@ def _render_entities_block(prompt: str, mapping: Mapping[str, str]) -> str:
     return pattern.sub(repl, prompt)
 
 
+def _render_missing_entities_block(prompt: str, mapping: Mapping[str, str]) -> str:
+    """Handle {{if .MissingEntities}} blocks."""
+    pattern = re.compile(r"{{-?\s*if\s+\.MissingEntities}}(.*?){{-?\s*end}}", re.DOTALL)
+
+    def repl(match: re.Match[str]) -> str:
+        content_if = match.group(1)
+        missing = mapping.get("{{.MissingEntities}}", "[]")
+        is_present = _is_truthy(missing) and missing != "[]"
+        return content_if if is_present else ""
+
+    return pattern.sub(repl, prompt)
+
+
+
 def _render_conditionals(prompt: str, mapping: Mapping[str, str]) -> str:
     """Resolve the limited set of Go-template conditionals we use."""
     prompt = _render_restriction_block(prompt, mapping)
@@ -137,6 +151,7 @@ def _render_conditionals(prompt: str, mapping: Mapping[str, str]) -> str:
     prompt = _render_sentiment_block(prompt, mapping)
     prompt = _render_unknown_intent_block(prompt, mapping)
     prompt = _render_entities_block(prompt, mapping)
+    prompt = _render_missing_entities_block(prompt, mapping)
     return prompt
 
 

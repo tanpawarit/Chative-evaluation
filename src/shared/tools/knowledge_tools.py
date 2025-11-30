@@ -60,11 +60,13 @@ def knowledge_search(
     hits = retriever.search(query=query, workspace_id=workspace_id, top_k=top_k) or []
     chunks: List[Dict[str, Any]] = [_to_agent_chunk(hit) for hit in hits]
 
-    return {
+    res = {
         "query": query,
         "total": len(chunks),
         "chunks": chunks,
     }
+    print(res)
+    return res
 
 
 # Convenience export for agent wiring.
