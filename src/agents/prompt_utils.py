@@ -26,6 +26,7 @@ MOCK_TEMPLATE_VARIABLES: Dict[str, str] = {
     "{{.Action}}": "knowledge_search",
     "{{.AllowedTools}}": "['knowledge_search', 'calculator']",
     "{{.UnknownIntent}}": "",
+    "{{.CurrentTime}}": "2024-01-01 12:00",
 }
 
 

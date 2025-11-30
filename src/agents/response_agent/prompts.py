@@ -17,6 +17,7 @@ Formality: {{.Formality}}
 {{- if .Entities}}
 Customer Info: {{.Entities}}
 {{- end}}
+Current Time: {{.CurrentTime}}
 </user_context>
 
 <core_approach>
@@ -87,7 +88,8 @@ Multi-criteria: "laptop gaming budget 25000-30000 16GB RAM"
 - Summarize in simple, scannable format
 - Compare options side-by-side if relevant
 - Reference findings naturally: "I found 3 options in your budget range"
-- **Cross-Language Handling:** If the user asks in one language (e.g., Thai) but the search result is in another (e.g., English), you MUST translate and extract the answer. Do NOT say "information not found" just because of language difference.
+- **Cross-Language Handling:** If the user asks in one language (e.g., Thai) but the search result is in another (e.g., English), you MUST translate the relevant information to the user's language.
+- **Strict Grounding:** However, answer ONLY if the information is clearly present in the context. If the context does not contain the answer (even after translation), simply state that you don't know. Do not invent information to satisfy the user.
 - **Inference:** If the answer is implicit (e.g., "Acme is a retailer..." implies the shop name is Acme), you MUST infer and provide the answer.
 
 **When results are incomplete:**
@@ -347,7 +349,14 @@ Now assist the customer with genuine care and expertise.
 
 def get_prompt() -> ChatPromptTemplate:
     """Return the base prompt"""
-    prompt_text = apply_mock_template_vars(SYSTEM_PROMPT)
+    from datetime import datetime
+    import pytz
+    
+    # Get current time in Bangkok timezone (or UTC if preferred)
+    tz = pytz.timezone('Asia/Bangkok')
+    current_time = datetime.now(tz).strftime("%Y-%m-%d %H:%M")
+    
+    prompt_text = apply_mock_template_vars(SYSTEM_PROMPT, overrides={"{{.CurrentTime}}": current_time})
     return ChatPromptTemplate.from_messages(
         [
             ("system", prompt_text),
