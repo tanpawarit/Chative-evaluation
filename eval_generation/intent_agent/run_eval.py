@@ -28,6 +28,7 @@ sys.path.append(str(PROJECT_ROOT / "src"))
 
 from agents.prompt_utils import apply_mock_template_vars  # noqa: E402
 from agents.intent_agent import prompts as intent_prompts  # noqa: E402
+from pkg.openrouter.client import get_chat_openrouter  # noqa: E402
 from eval_generation.intent_agent.goldens import (  # noqa: E402
     GOLDENS_PATH,
     INTENTS_PATH,
@@ -173,8 +174,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--model",
         type=str,
-        default="gpt-4o-mini",
-        help="OpenAI model to use.",
+        default="x-ai/grok-4.1-fast:free",
+        help="OpenRouter model to use.",
     )
     parser.add_argument(
         "--threshold",
@@ -194,7 +195,7 @@ def main():
     load_dotenv()
     args = parse_args()
 
-    llm = ChatOpenAI(model=args.model, temperature=0)
+    llm = get_chat_openrouter(model=args.model, temperature=0)
     
     # Load goldens from JSON
     goldens_file = GOLDENS_PATH

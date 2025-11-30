@@ -113,7 +113,7 @@ async def generate_negative_examples(
 
 async def main():
     load_dotenv()
-    llm = ChatOpenAI(model="gpt-4o", temperature=0.7) # Higher temp for diversity
+    llm = ChatOpenAI(model="gpt-4.1", temperature=0.7) # Higher temp for diversity
 
     intents = load_intents()
     all_goldens: List[IntentGolden] = []

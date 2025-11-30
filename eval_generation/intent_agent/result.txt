@@ -1,0 +1,542 @@
+Metrics Summary
+
+  - ✅ Base Metric (score: 1.0, threshold: 1.0, strict: False, evaluation model: None, reason: expected='inquire_product', actual='inquire_product', error: None)
+
+For test case:
+
+  - input: อยากทราบราคา iPhone 15 Pro Max ตอนนี้มีโปรอะไรบ้างคะ
+  - actual output: (intent      inquire_product 0.98    1.00)##
+(language       tha     1.00    1)##
+(sentiment      positive        0.85)##
+<|COMPLETED|>
+  - expected output: inquire_product
+  - context: ['check_stock:1.00,greet:0.20,inquire_product:1.00,technical_support:1.00,unknown:1.00,warranty_claim:1.00']
+  - retrieval context: None
+
+======================================================================
+
+Metrics Summary
+
+  - ✅ Base Metric (score: 1.0, threshold: 1.0, strict: False, evaluation model: None, reason: expected='inquire_product', actual='inquire_product', error: None)
+
+For test case:
+
+  - input: ขอรายละเอียดสเปคของโน๊ตบุ๊ค ASUS ROG รุ่นล่าสุดหน่อยครับ
+  - actual output: (intent      inquire_product 0.95    1.00)##
+(language       tha     1.00    1)##
+(sentiment      neutral 0.90)##
+<|COMPLETED|>
+  - expected output: inquire_product
+  - context: ['check_stock:1.00,greet:0.20,inquire_product:1.00,technical_support:1.00,unknown:1.00,warranty_claim:1.00']
+  - retrieval context: None
+
+======================================================================
+
+Metrics Summary
+
+  - ❌ Base Metric (score: 0.0, threshold: 1.0, strict: False, evaluation model: None, reason: expected='inquire_product', actual='check_stock', error: None)
+
+For test case:
+
+  - input: สินค้ายังมี Huawei Watch GT 4 สีดำอยู่ไหมคะ
+  - actual output: (intent      check_stock     0.98    1.00)##
+(intent inquire_product 0.45    1.00)##
+(language       tha     1.00    1)##
+(sentiment      neutral 0.90)##
+<|COMPLETED|>
+  - expected output: inquire_product
+  - context: ['check_stock:1.00,greet:0.20,inquire_product:1.00,technical_support:1.00,unknown:1.00,warranty_claim:1.00']
+  - retrieval context: None
+
+======================================================================
+
+Metrics Summary
+
+  - ✅ Base Metric (score: 1.0, threshold: 1.0, strict: False, evaluation model: None, reason: expected='inquire_product', actual='inquire_product', error: None)
+
+For test case:
+
+  - input: มีของแถมอะไรให้บ้างถ้าซื้อ Galaxy Tab S9 Plus
+  - actual output: (intent      inquire_product 0.95    1.00)##
+(language       tha     1.00    1)##
+(sentiment      neutral 0.90)##
+<|COMPLETED|>
+  - expected output: inquire_product
+  - context: ['check_stock:1.00,greet:0.20,inquire_product:1.00,technical_support:1.00,unknown:1.00,warranty_claim:1.00']
+  - retrieval context: None
+
+======================================================================
+
+Metrics Summary
+
+  - ✅ Base Metric (score: 1.0, threshold: 1.0, strict: False, evaluation model: None, reason: expected='inquire_product', actual='inquire_product', error: None)
+
+For test case:
+
+  - input: What’s the difference between AirPods Pro gen 1 and gen 2?
+  - actual output: (intent      inquire_product 0.95    1.00)##
+(language       eng     1.00    1)##
+(sentiment      neutral 0.90)##
+<|COMPLETED|>
+  - expected output: inquire_product
+  - context: ['check_stock:1.00,greet:0.20,inquire_product:1.00,technical_support:1.00,unknown:1.00,warranty_claim:1.00']
+  - retrieval context: None
+
+======================================================================
+
+Metrics Summary
+
+  - ✅ Base Metric (score: 1.0, threshold: 1.0, strict: False, evaluation model: None, reason: expected='greet', actual='greet', error: None)
+
+For test case:
+
+  - input: สวัสดีค่ะ มีใครอยู่ไหมคะ
+  - actual output: (intent      greet   0.98    0.20)##
+(language       tha     1.00    1)##
+(sentiment      positive        0.85)##
+<|COMPLETED|>
+  - expected output: greet
+  - context: ['check_stock:1.00,greet:0.20,inquire_product:1.00,technical_support:1.00,unknown:1.00,warranty_claim:1.00']
+  - retrieval context: None
+
+======================================================================
+
+Metrics Summary
+
+  - ✅ Base Metric (score: 1.0, threshold: 1.0, strict: False, evaluation model: None, reason: expected='greet', actual='greet', error: None)
+
+For test case:
+
+  - input: Hey there, มีใครพอจะช่วยได้บ้างไหม
+  - actual output: (intent      greet   0.95    0.20)##
+(language       tha     0.95    1)##
+(language       eng     0.90    0)##
+(sentiment      neutral 0.85)##
+<|COMPLETED|>
+  - expected output: greet
+  - context: ['check_stock:1.00,greet:0.20,inquire_product:1.00,technical_support:1.00,unknown:1.00,warranty_claim:1.00']
+  - retrieval context: None
+
+======================================================================
+
+Metrics Summary
+
+  - ✅ Base Metric (score: 1.0, threshold: 1.0, strict: False, evaluation model: None, reason: expected='greet', actual='greet', error: None)
+
+For test case:
+
+  - input: ขอทักทายหน่อยค่ะ มีใครรับแชทนี้อยู่หรือเปล่า
+  - actual output: (intent      greet   0.98    0.20)##
+(language       tha     1.00    1)##
+(sentiment      positive        0.85)##
+<|COMPLETED|>
+  - expected output: greet
+  - context: ['check_stock:1.00,greet:0.20,inquire_product:1.00,technical_support:1.00,unknown:1.00,warranty_claim:1.00']
+  - retrieval context: None
+
+======================================================================
+
+Metrics Summary
+
+  - ✅ Base Metric (score: 1.0, threshold: 1.0, strict: False, evaluation model: None, reason: expected='greet', actual='greet', error: None)
+
+For test case:
+
+  - input: ฮัลโหล แอดมินว่างไหมคะ
+  - actual output: (intent      greet   0.95    0.20)##
+(language       tha     1.00    1)##
+(sentiment      positive        0.85)##
+<|COMPLETED|>
+  - expected output: greet
+  - context: ['check_stock:1.00,greet:0.20,inquire_product:1.00,technical_support:1.00,unknown:1.00,warranty_claim:1.00']
+  - retrieval context: None
+
+======================================================================
+
+Metrics Summary
+
+  - ✅ Base Metric (score: 1.0, threshold: 1.0, strict: False, evaluation model: None, reason: expected='greet', actual='greet', error: None)
+
+For test case:
+
+  - input: สวัสดีครับ ขอสอบถามข้อมูลหน่อย
+  - actual output: (intent      greet   0.95    0.20)##
+(language       tha     1.00    1)##
+(sentiment      positive        0.85)##
+<|COMPLETED|>
+  - expected output: greet
+  - context: ['check_stock:1.00,greet:0.20,inquire_product:1.00,technical_support:1.00,unknown:1.00,warranty_claim:1.00']
+  - retrieval context: None
+
+======================================================================
+
+Metrics Summary
+
+  - ✅ Base Metric (score: 1.0, threshold: 1.0, strict: False, evaluation model: None, reason: expected='check_stock', actual='check_stock', error: None)
+
+For test case:
+
+  - input: มีรองเท้า Nike Air Max 270 ไซส์ 42 เหลืออยู่ไหมคะ
+  - actual output: (intent      check_stock     0.98    1.00)##
+(intent inquire_product 0.30    1.00)##
+(language       tha     1.00    1)##
+(sentiment      neutral 0.85)##
+<|COMPLETED|>
+  - expected output: check_stock
+  - context: ['check_stock:1.00,greet:0.20,inquire_product:1.00,technical_support:1.00,unknown:1.00,warranty_claim:1.00']
+  - retrieval context: None
+
+======================================================================
+
+Metrics Summary
+
+  - ✅ Base Metric (score: 1.0, threshold: 1.0, strict: False, evaluation model: None, reason: expected='check_stock', actual='check_stock', error: None)
+
+For test case:
+
+  - input: ขอสอบถามค่ะ iPhone 15 Pro สีดำยังมีของในสต็อกมั้ย
+  - actual output: (intent      check_stock     0.98    1.00)##
+(intent inquire_product 0.45    1.00)##
+(language       tha     0.98    1)##
+(language       eng     0.60    0)##
+(sentiment      neutral 0.90)##
+<|COMPLETED|>
+  - expected output: check_stock
+  - context: ['check_stock:1.00,greet:0.20,inquire_product:1.00,technical_support:1.00,unknown:1.00,warranty_claim:1.00']
+  - retrieval context: None
+
+======================================================================
+
+Metrics Summary
+
+  - ✅ Base Metric (score: 1.0, threshold: 1.0, strict: False, evaluation model: None, reason: expected='check_stock', actual='check_stock', error: None)
+
+For test case:
+
+  - input: Hello, is the Sony WH-1000XM5 still available?
+  - actual output: (intent      check_stock     0.98    1.00)##
+(intent greet   0.85    0.20)##
+(intent inquire_product 0.70    1.00)##
+(language       eng     1.00    1)##
+(sentiment      neutral 0.90)##
+<|COMPLETED|>
+  - expected output: check_stock
+  - context: ['check_stock:1.00,greet:0.20,inquire_product:1.00,technical_support:1.00,unknown:1.00,warranty_claim:1.00']
+  - retrieval context: None
+
+======================================================================
+
+Metrics Summary
+
+  - ✅ Base Metric (score: 1.0, threshold: 1.0, strict: False, evaluation model: None, reason: expected='check_stock', actual='check_stock', error: None)
+
+For test case:
+
+  - input: อยากรู้ว่าน้ำหอม Dior Sauvage ยังเหลืออยู่ไหมครับ
+  - actual output: (intent      check_stock     0.98    1.00)##
+(intent inquire_product 0.65    1.00)##
+(language       tha     1.00    1)##
+(sentiment      neutral 0.95)##
+<|COMPLETED|>
+  - expected output: check_stock
+  - context: ['check_stock:1.00,greet:0.20,inquire_product:1.00,technical_support:1.00,unknown:1.00,warranty_claim:1.00']
+  - retrieval context: None
+
+======================================================================
+
+Metrics Summary
+
+  - ✅ Base Metric (score: 1.0, threshold: 1.0, strict: False, evaluation model: None, reason: expected='check_stock', actual='check_stock', error: None)
+
+For test case:
+
+  - input: ขอเช็คสินค้า Gaming Mouse รุ่น Logitech G502 ยังมีมั้ยคะ
+  - actual output: (intent      check_stock     0.98    1.00)##
+(intent inquire_product 0.75    1.00)##
+(language       tha     0.98    1)##
+(language       eng     0.40    0)##
+(sentiment      neutral 0.85)##
+<|COMPLETED|>
+  - expected output: check_stock
+  - context: ['check_stock:1.00,greet:0.20,inquire_product:1.00,technical_support:1.00,unknown:1.00,warranty_claim:1.00']
+  - retrieval context: None
+
+======================================================================
+
+Metrics Summary
+
+  - ✅ Base Metric (score: 1.0, threshold: 1.0, strict: False, evaluation model: None, reason: expected='warranty_claim', actual='warranty_claim', error: None)
+
+For test case:
+
+  - input: ขอเคลมสินค้าเครื่องดูดฝุ่นที่เพิ่งซื้อไปเมื่ออาทิตย์ก่อนหน่อยค่ะ มันไม่ดูดฝุ่นเลย
+  - actual output: (intent      warranty_claim  0.98    1.00)##
+(intent technical_support       0.45    1.00)##
+(language       tha     1.00    1)##
+(sentiment      negative        0.90)##
+<|COMPLETED|>
+  - expected output: warranty_claim
+  - context: ['check_stock:1.00,greet:0.20,inquire_product:1.00,technical_support:1.00,unknown:1.00,warranty_claim:1.00']
+  - retrieval context: None
+
+======================================================================
+
+Metrics Summary
+
+  - ✅ Base Metric (score: 1.0, threshold: 1.0, strict: False, evaluation model: None, reason: expected='warranty_claim', actual='warranty_claim', error: None)
+
+For test case:
+
+  - input: โน้ตบุ๊คที่ซื้อจากร้านคุณเปิดไม่ติด มีประกันมั้ยคะ ต้องทำยังไงบ้าง
+  - actual output: (intent      warranty_claim  0.95    1.00)##
+(intent technical_support       0.90    1.00)##
+(language       tha     1.00    1)##
+(sentiment      negative        0.85)##
+<|COMPLETED|>
+  - expected output: warranty_claim
+  - context: ['check_stock:1.00,greet:0.20,inquire_product:1.00,technical_support:1.00,unknown:1.00,warranty_claim:1.00']
+  - retrieval context: None
+
+======================================================================
+
+Metrics Summary
+
+  - ✅ Base Metric (score: 1.0, threshold: 1.0, strict: False, evaluation model: None, reason: expected='warranty_claim', actual='warranty_claim', error: None)
+
+For test case:
+
+  - input: อยากสอบถามเรื่องการเคลม AirPods Pro มีเสียงซ่า ๆ ตลอดเลยครับ
+  - actual output: (intent      warranty_claim  0.98    1.00)##
+(intent technical_support       0.85    1.00)##
+(language       tha     1.00    1)##
+(sentiment      negative        0.85)##
+<|COMPLETED|>
+  - expected output: warranty_claim
+  - context: ['check_stock:1.00,greet:0.20,inquire_product:1.00,technical_support:1.00,unknown:1.00,warranty_claim:1.00']
+  - retrieval context: None
+
+======================================================================
+
+Metrics Summary
+
+  - ❌ Base Metric (score: 0.0, threshold: 1.0, strict: False, evaluation model: None, reason: expected='warranty_claim', actual='technical_support', error: None)
+
+For test case:
+
+  - input: สวัสดีค่ะ สินค้า Smart TV มี error code E05 ขึ้นมา สามารถส่งเคลมได้หรือเปล่า
+  - actual output: (intent      technical_support       0.95    1.00)##
+(intent warranty_claim  0.90    1.00)##
+(intent greet   0.80    0.20)##
+(language       tha     1.00    1)##
+(sentiment      neutral 0.85)##
+<|COMPLETED|>
+  - expected output: warranty_claim
+  - context: ['check_stock:1.00,greet:0.20,inquire_product:1.00,technical_support:1.00,unknown:1.00,warranty_claim:1.00']
+  - retrieval context: None
+
+======================================================================
+
+Metrics Summary
+
+  - ✅ Base Metric (score: 1.0, threshold: 1.0, strict: False, evaluation model: None, reason: expected='warranty_claim', actual='warranty_claim', error: None)
+
+For test case:
+
+  - input: ถ้าอยากคืนเครื่องปริ้นที่เสียใน 7 วัน ต้องเตรียมเอกสารอะไรบ้าง
+  - actual output: (intent      warranty_claim  0.95    1.00)##
+(language       tha     1.00    1)##
+(sentiment      neutral 0.90)##
+<|COMPLETED|>
+  - expected output: warranty_claim
+  - context: ['check_stock:1.00,greet:0.20,inquire_product:1.00,technical_support:1.00,unknown:1.00,warranty_claim:1.00']
+  - retrieval context: None
+
+======================================================================
+
+Metrics Summary
+
+  - ✅ Base Metric (score: 1.0, threshold: 1.0, strict: False, evaluation model: None, reason: expected='technical_support', actual='technical_support', error: None)
+
+For test case:
+
+  - input: ขอความช่วยเหลือหน่อยค่ะ แอปเข้าไม่ได้ขึ้น error code 502
+  - actual output: (intent      technical_support       0.98    1.00)##
+(language       tha     1.00    1)##
+(sentiment      neutral 0.85)##
+<|COMPLETED|>
+  - expected output: technical_support
+  - context: ['check_stock:1.00,greet:0.20,inquire_product:1.00,technical_support:1.00,unknown:1.00,warranty_claim:1.00']
+  - retrieval context: None
+
+======================================================================
+
+Metrics Summary
+
+  - ✅ Base Metric (score: 1.0, threshold: 1.0, strict: False, evaluation model: None, reason: expected='technical_support', actual='technical_support', error: None)
+
+For test case:
+
+  - input: มือถือผม connect Wi-Fi ไม่ได้เลยครับ ต้องทำยังไงดี
+  - actual output: (intent      technical_support       0.98    1.00)##
+(language       tha     1.00    1)##
+(sentiment      negative        0.85)##
+<|COMPLETED|>
+  - expected output: technical_support
+  - context: ['check_stock:1.00,greet:0.20,inquire_product:1.00,technical_support:1.00,unknown:1.00,warranty_claim:1.00']
+  - retrieval context: None
+
+======================================================================
+
+Metrics Summary
+
+  - ✅ Base Metric (score: 1.0, threshold: 1.0, strict: False, evaluation model: None, reason: expected='technical_support', actual='technical_support', error: None)
+
+For test case:
+
+  - input: Printer รุ่น HP LaserJet Pro พิมพ์ไม่ออกเลยครับ มีวิธีแก้มั้ย
+  - actual output: (intent      technical_support       0.98    1.00)##
+(language       tha     0.98    1)##
+(language       eng     0.40    0)##
+(sentiment      negative        0.85)##
+<|COMPLETED|>
+  - expected output: technical_support
+  - context: ['check_stock:1.00,greet:0.20,inquire_product:1.00,technical_support:1.00,unknown:1.00,warranty_claim:1.00']
+  - retrieval context: None
+
+======================================================================
+
+Metrics Summary
+
+  - ✅ Base Metric (score: 1.0, threshold: 1.0, strict: False, evaluation model: None, reason: expected='technical_support', actual='technical_support', error: None)
+
+For test case:
+
+  - input: Line เด้งออกตลอดเลย เป็นเพราะอะไรคะ
+  - actual output: (intent      technical_support       0.95    1.00)##
+(language       tha     1.00    1)##
+(sentiment      negative        0.85)##
+<|COMPLETED|>
+  - expected output: technical_support
+  - context: ['check_stock:1.00,greet:0.20,inquire_product:1.00,technical_support:1.00,unknown:1.00,warranty_claim:1.00']
+  - retrieval context: None
+
+======================================================================
+
+Metrics Summary
+
+  - ✅ Base Metric (score: 1.0, threshold: 1.0, strict: False, evaluation model: None, reason: expected='technical_support', actual='technical_support', error: None)
+
+For test case:
+
+  - input: ตอนอัปเดต software เจอข้อความว่า "Update failed (E1001)" ต้องแก้ยังไง?
+  - actual output: (intent      technical_support       0.98    1.00)##
+(language       tha     0.99    1)##
+(sentiment      negative        0.85)##
+<|COMPLETED|>
+  - expected output: technical_support
+  - context: ['check_stock:1.00,greet:0.20,inquire_product:1.00,technical_support:1.00,unknown:1.00,warranty_claim:1.00']
+  - retrieval context: None
+
+======================================================================
+
+Metrics Summary
+
+  - ✅ Base Metric (score: 1.0, threshold: 1.0, strict: False, evaluation model: None, reason: expected='unknown', actual='unknown', error: None)
+
+For test case:
+
+  - input: ขอสอบถามวิธีการชำระเงินหน่อยค่ะ
+  - actual output: (intent      unknown 0.00    0.00)##
+(language       tha     1.00    1)##
+(sentiment      neutral 0.85)##
+<|COMPLETED|>
+  - expected output: unknown
+  - context: ['check_stock:1.00,greet:0.20,inquire_product:1.00,technical_support:1.00,unknown:1.00,warranty_claim:1.00']
+  - retrieval context: None
+
+======================================================================
+
+Metrics Summary
+
+  - ❌ Base Metric (score: 0.0, threshold: 1.0, strict: False, evaluation model: None, reason: expected='unknown', actual='inquire_product', error: None)
+
+For test case:
+
+  - input: รบกวนช่วยแนะนำโปรโมชั่นที่มีอยู่ตอนนี้ให้หน่อย
+  - actual output: (intent      inquire_product 0.90    1.00)##
+(language       tha     1.00    1)##
+(sentiment      positive        0.85)##
+<|COMPLETED|>
+  - expected output: unknown
+  - context: ['check_stock:1.00,greet:0.20,inquire_product:1.00,technical_support:1.00,unknown:1.00,warranty_claim:1.00']
+  - retrieval context: None
+
+======================================================================
+
+Metrics Summary
+
+  - ✅ Base Metric (score: 1.0, threshold: 1.0, strict: False, evaluation model: None, reason: expected='unknown', actual='unknown', error: None)
+
+For test case:
+
+  - input: Can I change my delivery address?
+  - actual output: (intent      unknown 0.00    0.00)##
+(language       eng     1.00    1)##
+(sentiment      neutral 0.90)##
+<|COMPLETED|>
+  - expected output: unknown
+  - context: ['check_stock:1.00,greet:0.20,inquire_product:1.00,technical_support:1.00,unknown:1.00,warranty_claim:1.00']
+  - retrieval context: None
+
+======================================================================
+
+Metrics Summary
+
+  - ✅ Base Metric (score: 1.0, threshold: 1.0, strict: False, evaluation model: None, reason: expected='unknown', actual='unknown', error: None)
+
+For test case:
+
+  - input: อยากทราบวิธีสมัครสมาชิกต้องทำยังไง
+  - actual output: (intent      unknown 0.00    0.00)##
+(language       tha     1.00    1)##
+(sentiment      neutral 0.90)##
+<|COMPLETED|>
+  - expected output: unknown
+  - context: ['check_stock:1.00,greet:0.20,inquire_product:1.00,technical_support:1.00,unknown:1.00,warranty_claim:1.00']
+  - retrieval context: None
+
+======================================================================
+
+Metrics Summary
+
+  - ✅ Base Metric (score: 1.0, threshold: 1.0, strict: False, evaluation model: None, reason: expected='unknown', actual='unknown', error: None)
+
+For test case:
+
+  - input: ขอใบเสร็จรับเงินย้อนหลังได้ไหม
+  - actual output: (intent      unknown 0.00    0.00)##
+(language       tha     1.00    1)##
+(sentiment      neutral 0.90)##
+<|COMPLETED|>
+  - expected output: unknown
+  - context: ['check_stock:1.00,greet:0.20,inquire_product:1.00,technical_support:1.00,unknown:1.00,warranty_claim:1.00']
+  - retrieval context: None
+
+======================================================================
+
+Overall Metric Pass Rates
+
+Base Metric: 90.00% pass rate
+
+======================================================================
+
+
+
+✓ Evaluation completed 🎉! (time taken: 0.21s | token cost: None USD)
+» Test Results (30 total tests):
+   » Pass Rate: 90.0% | Passed: 27 | Failed: 3
+
+ ================================================================================ 
+
+» What to share evals with your team, or a place for your test cases to live? ❤️ 🏡
+  » Run 'deepeval view' to analyze and save testing results on Confident AI.
